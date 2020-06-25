@@ -70,6 +70,12 @@
                 <i class="{{menuItem.icon}}"></i>
                 <p>{{menuItem.title}}</p>
             </a>
+            <ul routerLinkActive="active" *ngFor="let child of menuItem.child" class="{{child.class}}">
+                <a  [routerLink]="[child.path]">
+                    <i class="{{child.icon}}"></i>
+                    <p>{{child.title}}</p>
+                </a>
+            </ul>
         </li>
     </ul>
 </div>

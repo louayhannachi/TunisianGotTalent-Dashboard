@@ -6,11 +6,18 @@ declare interface RouteInfo {
     title: string;
     icon: string;
     class: string;
+    child?: RouteInfo[]
 }
 export const ROUTES: RouteInfo[] = [
-    { path: '/talent', title: 'Talent Management',  icon: 'pe-7s-medal', class: '' },
+    { path: '/url', title: 'Talent Management',  icon: 'pe-7s-medal', class: '', child : [
+      {path: '/TalentStatistics', title: 'Talent statistic',  icon: 'pe-7s-graph1', class: ''},
+      {path: '/talentList', title: 'Talent List',  icon: 'pe-7s-menu', class: ''},
+      {path: '/TalenBlockedList', title: 'Talent Blocked List',  icon: 'pe-7s-less', class: ''}
+    ] },
     { path: '/business', title: 'Business Management',  icon:'pe-7s-user', class: '' },
-    { path: '/event', title: 'Event Management',  icon:'pe-7s-note2', class: '' },
+    { path: '/url', title: 'Event Management',  icon:'pe-7s-note2', class: '', child : [
+      {path: '/event', title: 'Event List',  icon: 'pe-7s-menu', class: ''}
+    ] },
     { path: '/forum', title: 'Forum Management',  icon:'pe-7s-news-paper', class: '' },
     { path: '/competition', title: 'Competition Management',  icon:'pe-7s-science', class: '' },
     // { path: '/maps', title: 'Maps (tools)',  icon:'pe-7s-map-marker', class: '' },
@@ -28,6 +35,7 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
+    console.log('menuItems',this.menuItems)
   }
   isMobileMenu() {
       if ($(window).width() > 991) {

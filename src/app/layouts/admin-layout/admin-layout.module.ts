@@ -1,3 +1,5 @@
+import { TalentModule } from './../../tunisian-got-talent/modules/talent-management/talent.module';
+import { EventModule } from './../../tunisian-got-talent/modules/event-management/event.module';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -24,7 +26,9 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
     RouterModule.forChild(AdminLayoutRoutes),
     FormsModule,
     LbdModule,
-    NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=YOUR_KEY_HERE'})
+    NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=YOUR_KEY_HERE'}),
+    EventModule,
+    TalentModule
   ],
   declarations: [
     HomeComponent,

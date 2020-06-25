@@ -131,6 +131,42 @@
             }
         }
 
+        ul{
+            > a{
+                color: #FFFFFF;
+                margin: 5px 15px;
+                opacity: .86;
+                border-radius: 4px;
+                display: block;
+            }
+
+            &:hover > a{
+                background: rgba(255,255,255,0.13);
+                opacity: 1;
+            }
+
+            &.active > a{
+                color: #FFFFFF;
+                opacity: 1;
+                background: rgba(185, 33, 33, 0.23);
+
+            }
+
+            a.dropdown-toggle{
+                background-color: transparent;
+                outline: none;
+            }
+
+            &.separator{
+                margin: 15px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+                & + li {
+                    margin-top: 31px;
+                }
+            }
+        }
+
         p{
             margin: 0;
             line-height: 30px;

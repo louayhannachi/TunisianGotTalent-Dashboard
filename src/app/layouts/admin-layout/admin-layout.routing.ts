@@ -1,3 +1,7 @@
+import { TalenBlockedListComponent } from './../../tunisian-got-talent/modules/talent-management/components/talent-blocked-list/talent-blocked-list.component';
+import { TalentStatisticsComponent } from './../../tunisian-got-talent/modules/talent-management/components/talent-statistics/talent-statistics.component';
+import { TalentListComponent } from './../../tunisian-got-talent/modules/talent-management/components/talent-list/talent-list.component';
+import { ShowEventComponent } from './../../tunisian-got-talent/modules/event-management/components/show-event/show-event.component';
 import { Routes } from '@angular/router';
 
 import { HomeComponent } from '../../home/home.component';
@@ -12,8 +16,11 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
 export const AdminLayoutRoutes: Routes = [
     { path: '',      component: HomeComponent },
     { path: 'talent',      component: HomeComponent },
+    { path: 'talentList',      component: TalentListComponent },
+    { path: 'TalentStatistics',      component: TalentStatisticsComponent },
+    { path: 'TalenBlockedList',      component: TalenBlockedListComponent },
     { path: 'business',           component: UserComponent },
-    { path: 'event',          component: TablesComponent },
+    { path: 'event',          component: ShowEventComponent },
     { path: 'forum',     component: TypographyComponent },
     { path: 'competition',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },

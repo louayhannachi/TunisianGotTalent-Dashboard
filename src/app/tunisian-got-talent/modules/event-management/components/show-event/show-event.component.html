@@ -1,0 +1,21 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>EventMangment</h2>
+                <div class="card">
+                    <div *ngIf="events">
+                        <div *ngFor="let e of events">
+                            <li>
+                                <ul>titre:{{e.titre}}}</ul>
+                                <ul>description:{{e.description}}}</ul>
+                                <ul>nbparticipant:{{e.nbparticipant}}}</ul>
+                                <ul>date:{{e.date}}}</ul>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
