@@ -1,8 +1,8 @@
 import { NotificationDialogComponent } from './shared/notification-dialog/notification-dialog.component';
 import { AlertNotificationSubject } from "./tunisian-got-talent/models/user.model";
-import { MatDialog } from "@angular/material";
 import { Component, OnInit } from "@angular/core";
 import { LocationStrategy, PlatformLocation, Location } from "@angular/common";
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: "app-root",
@@ -23,6 +23,7 @@ export class AppComponent implements OnInit {
       NotificationDialogComponent,
       {
         data: dialogData,
+        width: '600px',
         closeOnNavigation: true,
       }
     );

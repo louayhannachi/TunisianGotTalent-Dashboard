@@ -67,7 +67,7 @@
                     </ul>
                 </li> -->
                 <li>
-                    <a [routerLink]="['/authentification']">
+                    <a *ngIf="connectedUser" (click)="logOut()">
                         <p>Log out</p>
                     </a>
                 </li>

@@ -4,7 +4,7 @@
   padding-bottom: 4%;
   .secondary {
     button {
-      background-color: var(#e35438) !important;
+      background-color: #e35438 !important;
       min-width: 168px;
       min-height: 40px;
       border-radius: 8px;
@@ -18,16 +18,16 @@
       line-height: 1.38;
       letter-spacing: 0.1px;
       text-align: center;
-      color: var(white);
+      color: white;
     }
   }
   .primary{
     button {
-      background-color: var(white) !important;
+      background-color: white !important;
       min-width: 168px;
       min-height: 40px;
       border-radius: 8px;
-      border: solid 1px var(#e35438);
+      border: solid 1px #e35438;
     }
     ::ng-deep .mat-button-wrapper {
       font-family: Lato;
@@ -38,7 +38,7 @@
       line-height: 1.38;
       letter-spacing: 0.1px;
       text-align: center;
-      color: var(#e35438);
+      color: #e35438;
     }
   }
 }
@@ -50,6 +50,7 @@
     width: 100% !important;
     height: 100% !important;
     padding-bottom: 5%;
+    padding-right: 8%
   }
   i {
     font-size: 70px;
@@ -67,7 +68,7 @@ mat-dialog-content {
   font-style: normal;
   line-height: 1.38;
   letter-spacing: 0.1px;
-  color: var(black);
+  color: black;
 }
 
 mat-expansion-panel {
@@ -84,7 +85,7 @@ mat-panel-title {
   font-style: normal;
   line-height: 1.38;
   letter-spacing: 0.1px;
-  color: var(#666666);
+  color: #666666;
 }
 
 h2 {
@@ -98,23 +99,23 @@ h2 {
   line-height: 1.25;
   letter-spacing: 0.2px;
   text-align: center;
-  color: var(#666666);
+  color: #666666;
 }
 
 .erreur {
-  color: var(#b3243d);
+  color: #b3243d;
 }
 
 .success {
-  color: var(#008000);
+  color: #008000;
 }
 
 .warning {
-  color: var(#f9a562);
+  color: #f9a562;
 }
 
 .information {
-  color: var(#008bba);
+  color: #008bba;
 }
 
 .close-icon {

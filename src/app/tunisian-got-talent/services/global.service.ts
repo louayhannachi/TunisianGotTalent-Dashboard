@@ -12,8 +12,12 @@ export class GlobalService {
     
   constructor(private httpClient: HttpClient) {}
 
-  getCurrentMode(): Observable<UserDetails> {
+  getConnectedUser(): Observable<UserDetails> {
     return GlobalService.connectUser;
+  }
+
+  setConnectedUser(user: UserDetails) {
+    GlobalService.connectUser.next(user);
   }
 
   authenticate(userDetails: UserDetails): Observable<any> {
