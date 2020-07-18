@@ -1,3 +1,4 @@
+import { authentificationComponent } from './../../shared/authentification/authentification.component';
 import { TalenBlockedListComponent } from './../../tunisian-got-talent/modules/talent-management/components/talent-blocked-list/talent-blocked-list.component';
 import { TalentStatisticsComponent } from './../../tunisian-got-talent/modules/talent-management/components/talent-statistics/talent-statistics.component';
 import { TalentListComponent } from './../../tunisian-got-talent/modules/talent-management/components/talent-list/talent-list.component';
@@ -14,7 +15,7 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 
 export const AdminLayoutRoutes: Routes = [
-    { path: '',      component: HomeComponent },
+    { path: '',      component: authentificationComponent },
     { path: 'talent',      component: HomeComponent },
     { path: 'talentList',      component: TalentListComponent },
     { path: 'TalentStatistics',      component: TalentStatisticsComponent },
@@ -23,6 +24,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'event',          component: ShowEventComponent },
     { path: 'forum',     component: TypographyComponent },
     { path: 'competition',          component: IconsComponent },
+    { path: 'authentification',      component: authentificationComponent },
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },

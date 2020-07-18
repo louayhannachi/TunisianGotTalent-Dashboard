@@ -1,0 +1,40 @@
+<div class="close-icon">
+  <button mat-button mat-dialog-close>
+    <i class="fa fa-times"></i>
+  </button>
+</div>
+
+<h2 mat-dialog-title>{{data.header}}</h2>
+
+<div class="icons">
+  <mat-icon *ngIf="data.dialogType === 'ERROR'"><i class="fa fa-times-circle erreur"></i></mat-icon>
+  <mat-icon *ngIf="data.dialogType === 'SUCCESS'"><i class="fa fa-check-circle success"></i></mat-icon>
+  <mat-icon *ngIf="data.dialogType === 'WARNING'"><i class="fa fa-exclamation-circle warning"></i></mat-icon>
+  <mat-icon *ngIf="data.dialogType === 'INFORMATION'"><i class="fa fa-info-circle information"></i></mat-icon>
+</div>
+
+<mat-dialog-content *ngIf="data.message">{{data.message}}</mat-dialog-content>
+
+<mat-accordion *ngIf="data.stackTrace">
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Details
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-dialog-content>{{data.stackTrace}}</mat-dialog-content>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<mat-dialog-actions class="button-row">
+  <div class="primary">
+    <button *ngIf="data.cancelBtn" mat-raised-button mat-dialog-close color="warn"
+      (click)="executeCancelAction()">Cancel</button>
+  </div>
+  <div class="secondary">
+    <button *ngIf="data.okBtn" mat-raised-button mat-dialog-close color="warn"
+      (click)="executeOkAction()">OK</button>
+    <button *ngIf="data.customBtn" mat-raised-button color="warn" mat-dialog-close
+      (click)="executeCustomAction()">{{data.customBtnLabel}}</button>
+  </div>
+</mat-dialog-actions>

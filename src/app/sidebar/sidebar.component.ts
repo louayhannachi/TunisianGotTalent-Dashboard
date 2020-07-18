@@ -30,6 +30,7 @@ export const ROUTES: RouteInfo[] = [
 })
 export class SidebarComponent implements OnInit {
   menuItems: any[];
+  showSubMenu: boolean;
 
   constructor() { }
 
@@ -43,4 +44,7 @@ export class SidebarComponent implements OnInit {
       }
       return true;
   };
+  openSubMenu(){
+    this.showSubMenu = true;
+  }
 }

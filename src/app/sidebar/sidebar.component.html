@@ -65,17 +65,20 @@
             </a>
         </li>
         <li class="separator hidden-lg hidden-md" *ngIf="isMobileMenu()"></li>
-        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}" (click)="openSubMenu()">
             <a  [routerLink]="[menuItem.path]">
                 <i class="{{menuItem.icon}}"></i>
                 <p>{{menuItem.title}}</p>
             </a>
-            <ul routerLinkActive="active" *ngFor="let child of menuItem.child" class="{{child.class}}">
-                <a  [routerLink]="[child.path]">
-                    <i class="{{child.icon}}"></i>
-                    <p>{{child.title}}</p>
-                </a>
-            </ul>
+            <div *ngIf="showSubMenu">
+                <ul routerLinkActive="active" *ngFor="let child of menuItem.child" class="{{child.class}}">
+                    <a  [routerLink]="[child.path]">
+                        <i class="{{child.icon}}"></i>
+                        <p>{{child.title}}</p>
+                    </a>
+                </ul>
+            </div>
+            
         </li>
     </ul>
 </div>

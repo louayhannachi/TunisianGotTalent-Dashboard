@@ -1,0 +1,122 @@
+.button-row {
+  justify-content: space-between;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  .secondary {
+    button {
+      background-color: var(#e35438) !important;
+      min-width: 168px;
+      min-height: 40px;
+      border-radius: 8px;
+    }
+    ::ng-deep .mat-button-wrapper {
+      font-family: Lato;
+      font-size: 16px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.38;
+      letter-spacing: 0.1px;
+      text-align: center;
+      color: var(white);
+    }
+  }
+  .primary{
+    button {
+      background-color: var(white) !important;
+      min-width: 168px;
+      min-height: 40px;
+      border-radius: 8px;
+      border: solid 1px var(#e35438);
+    }
+    ::ng-deep .mat-button-wrapper {
+      font-family: Lato;
+      font-size: 16px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.38;
+      letter-spacing: 0.1px;
+      text-align: center;
+      color: var(#e35438);
+    }
+  }
+}
+
+.icons {
+  mat-icon {
+    display: flex;
+    justify-content: center;
+    width: 100% !important;
+    height: 100% !important;
+    padding-bottom: 5%;
+  }
+  i {
+    font-size: 70px;
+  }
+}
+
+mat-dialog-content {
+  max-height: 100px;
+  text-align: center;
+  margin-bottom: 5%;
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: 0.1px;
+  color: var(black);
+}
+
+mat-expansion-panel {
+  mat-dialog-content {
+    margin-right: 4%;
+  }
+}
+
+mat-panel-title {
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: 0.1px;
+  color: var(#666666);
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  font-family: Lato;
+  font-size: 32px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: var(#666666);
+}
+
+.erreur {
+  color: var(#b3243d);
+}
+
+.success {
+  color: var(#008000);
+}
+
+.warning {
+  color: var(#f9a562);
+}
+
+.information {
+  color: var(#008bba);
+}
+
+.close-icon {
+  text-align: end;
+}
