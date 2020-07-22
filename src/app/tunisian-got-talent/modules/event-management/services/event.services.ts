@@ -12,7 +12,7 @@ export class EventService {
   constructor(private httpClient: HttpClient) {}
 
   getAll(): Observable<any> {
-    return this.httpClient.get<any>(wsUrl.event.getAll, {
+    return this.httpClient.get<any>(wsUrl.event.events.getAll, {
       headers: {
         "Access-Control-Allow-Origin": "*",
       },
@@ -20,7 +20,7 @@ export class EventService {
   }
 
   getById(id): Observable<any> {
-    const url = StringFormat(wsUrl.event.getById , id);
+    const url = StringFormat(wsUrl.event.events.getById, id);
     return this.httpClient.get<any>(url, {
       headers: {
         "Access-Control-Allow-Origin": "*",
@@ -29,49 +29,41 @@ export class EventService {
   }
 
   create(event: EventModel): Observable<any> {
-    let url = 
-    wsUrl.event.create
-    .concat("?titre=")
-    .concat(event.titre)
-    .concat("&description=")
-    .concat(event.description)
-    .concat("&nbparticipant=")
-    .concat(event.nbparticipant)
-    .concat("&date=")
-    .concat(event.date);
-    return this.httpClient.get<any>(
-      url,
-      {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
-      }
-    );
+    let url = wsUrl.event.events.create
+      .concat("?titre=")
+      .concat(event.titre)
+      .concat("&description=")
+      .concat(event.description)
+      .concat("&nbparticipant=")
+      .concat(event.nbparticipant)
+      .concat("&date=")
+      .concat(event.date);
+    return this.httpClient.get<any>(url, {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
   }
 
   edit(event: EventModel): Observable<any> {
-    let url = 
-    StringFormat(wsUrl.event.edit , event.id)
-    .concat("?titre=")
-    .concat(event.titre)
-    .concat("&description=")
-    .concat(event.description)
-    .concat("&nbparticipant=")
-    .concat(event.nbparticipant)
-    .concat("&date=")
-    .concat(event.date);
-    return this.httpClient.get<any>(
-      url,
-      {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
-      }
-    );
+    let url = StringFormat(wsUrl.event.events.edit, event.id)
+      .concat("?titre=")
+      .concat(event.titre)
+      .concat("&description=")
+      .concat(event.description)
+      .concat("&nbparticipant=")
+      .concat(event.nbparticipant)
+      .concat("&date=")
+      .concat(event.date);
+    return this.httpClient.get<any>(url, {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
   }
 
   delete(id): Observable<any> {
-    const url = StringFormat(wsUrl.event.delete , id);
+    const url = StringFormat(wsUrl.event.events.delete, id);
     return this.httpClient.delete<any>(url, {
       headers: {
         "Access-Control-Allow-Origin": "*",
@@ -80,11 +72,31 @@ export class EventService {
   }
 
   participer(id): Observable<any> {
-    const url = StringFormat(wsUrl.event.participer , id);
+    const url = StringFormat(wsUrl.event.events.participer, id);
     return this.httpClient.get<any>(url, {
       headers: {
         "Access-Control-Allow-Origin": "*",
       },
     });
+  }
+
+  getAllCategory():Observable<any>  {
+    return this.httpClient.get<any>(wsUrl.event.category.getAll, {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
+  }
+
+
+  deleteCategory(id):Observable<any>{
+    const url = StringFormat(wsUrl.event.category.delete, id);
+
+    return this.httpClient.delete<any>(url, {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
+
   }
 }

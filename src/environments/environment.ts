@@ -28,12 +28,18 @@ export const wsUrl = {
     }
   },
   'event': {
+    'events':{
     'getAll':'/tgt/event/getAll',
     'getById':'/tgt/event/getById/{0}',
     'create':'/tgt/event/create',
     'edit':'/tgt/event/edit/{0}',
     'delete':'/tgt/event/delete/{0}',
     'participer':'/tgt/event/participer/{0}'
+    },
+    'category':{
+      'getAll' : '/tgt/categoryevent/',
+      'delete': '/tgt/categoryevent/delete/{0}'
+    },
   },
   'business': {
     

@@ -5,3 +5,8 @@ export class EventModel {
     nbparticipant:string
     date:string
 }
+
+export class CategoryModel {
+    id?:string
+    titrecat:string
+}

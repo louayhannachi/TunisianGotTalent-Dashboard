@@ -1,0 +1,17 @@
+<div>
+  <div class="container-fluid evenement-card rowcol-md-12">
+    <h2>Category list</h2>
+    <div *ngIf="category">
+      <div *ngFor="let e of category" style="padding-bottom: 5%;"> 
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title> Category Name : {{e.titrecat}}
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-actions>
+            <button mat-button>EDIT</button>
+            <button mat-button (click)="deleteCategory(e.id)" >DELETE</button>
+          </mat-card-actions>
+        </mat-card>
+  </div>
+</div>

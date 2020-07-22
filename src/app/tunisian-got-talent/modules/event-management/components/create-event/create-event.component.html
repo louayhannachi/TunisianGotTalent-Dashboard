@@ -1,0 +1,83 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Add Event</h4>
+          </div>
+          <div class="content">
+            <form>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Titre</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Titre"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Category</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Category"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <mat-form-field color="accent" appearance="fill">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker1" />
+                    <mat-datepicker-toggle
+                      matSuffix
+                      [for]="picker1"
+                    ></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Nombre de place</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Nombre de place"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Descreption</label>
+                    <textarea
+                      rows="5"
+                      class="form-control"
+                      placeholder="Here can be your description"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-info btn-fill pull-right">
+                Add
+              </button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 import { EventService } from "./../../services/event.services";
-import { EventModel } from "./../../models/event.model";
+import { EventModel, CategoryModel } from "./../../models/event.model";
 import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
@@ -9,13 +9,23 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class ShowEventComponent implements OnInit {
   events: EventModel[];
-
   constructor(private eventService: EventService) {}
 
   ngOnInit() {
+    this.getAllEvent();
+  }
+
+  getAllEvent() {
     this.eventService.getAll().subscribe((result) => {
       console.log("result", result);
       result ? (this.events = result) : console.log("no Evens");
+    });
+  }
+
+  deleteEvent(id)
+  {
+    this.eventService.delete(id).subscribe((result) => {
+      this.getAllEvent();
     });
   }
 }

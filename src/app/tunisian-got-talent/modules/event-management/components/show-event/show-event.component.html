@@ -1,21 +1,24 @@
-<div class="main-content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>EventMangment</h2>
-                <div class="card">
-                    <div *ngIf="events">
-                        <div *ngFor="let e of events">
-                            <li>
-                                <ul>titre:{{e.titre}}}</ul>
-                                <ul>description:{{e.description}}}</ul>
-                                <ul>nbparticipant:{{e.nbparticipant}}}</ul>
-                                <ul>date:{{e.date}}}</ul>
-                            </li>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div>
+  <div class="container-fluid evenement-card rowcol-md-12">
+    <h2>EventMangment</h2>
+    <div *ngIf="events">
+      <div *ngFor="let e of events" style="padding-bottom: 5%;">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title>{{ e.titre }}</mat-card-title>
+            <mat-card-subtitle>{{ e.date }}</mat-card-subtitle>
+            <mat-card-subtitle>{{ e.nbparticipant }} Places</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="assets/img/event.jpg" />
+          <mat-card-content>
+            <p>{{ e.description }}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>EDIT</button>
+            <button mat-button (click)="deleteEvent(e.id)">DELETE</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
     </div>
+  </div>
 </div>

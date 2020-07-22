@@ -1,3 +1,7 @@
+import { RatingStatistiqueComponent } from './../../tunisian-got-talent/modules/event-management/components/rating-statistique/rating-statistique.component';
+import { ShowCategoryComponent } from './../../tunisian-got-talent/modules/event-management/components/show-category/show-category.component';
+import { CreateCategoryComponent } from './../../tunisian-got-talent/modules/event-management/components/create-category/create-category.component';
+import { CreateEventComponent } from './../../tunisian-got-talent/modules/event-management/components/create-event/create-event.component';
 import { authentificationComponent } from './../../shared/authentification/authentification.component';
 import { TalenBlockedListComponent } from './../../tunisian-got-talent/modules/talent-management/components/talent-blocked-list/talent-blocked-list.component';
 import { TalentStatisticsComponent } from './../../tunisian-got-talent/modules/talent-management/components/talent-statistics/talent-statistics.component';
@@ -22,6 +26,10 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'TalenBlockedList',      component: TalenBlockedListComponent },
     { path: 'business',           component: UserComponent },
     { path: 'event',          component: ShowEventComponent },
+    { path: 'createEvent',          component: CreateEventComponent },
+    { path: 'category',          component: ShowCategoryComponent },
+    { path: 'createCategory',          component: CreateCategoryComponent },
+    { path: 'RatingStatistique',          component: RatingStatistiqueComponent },
     { path: 'forum',     component: TypographyComponent },
     { path: 'competition',          component: IconsComponent },
     { path: 'authentification',      component: authentificationComponent },
