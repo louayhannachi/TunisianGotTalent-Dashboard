@@ -1,3 +1,5 @@
+import { Router } from "@angular/router";
+import { GlobalService } from "./../tunisian-got-talent/services/global.service";
 import { Component, OnInit } from "@angular/core";
 
 declare const $: any;
@@ -7,13 +9,15 @@ declare interface RouteInfo {
   icon: string;
   class: string;
   child?: RouteInfo[];
+  openSubMenu?: boolean;
 }
 export const ROUTES: RouteInfo[] = [
   {
-    path: "/url",
+    path: null,
     title: "Talent Management",
     icon: "pe-7s-medal",
     class: "",
+    openSubMenu: false,
     child: [
       {
         path: "/TalentStatistics",
@@ -42,16 +46,37 @@ export const ROUTES: RouteInfo[] = [
     class: "",
   },
   {
-    path: "/event",
+    path: null,
     title: "Event Management",
     icon: "pe-7s-note2",
     class: "",
+    openSubMenu: false,
     child: [
       { path: "/event", title: "Event List", icon: "pe-7s-menu", class: "" },
-      { path: "/createEvent", title: "Create Event", icon: "pe-7s-plus", class: "" },
-      { path: "/category", title: "Category List", icon: "pe-7s-menu", class: "" },
-      { path: "/createCategory", title: "Create Category", icon: "pe-7s-plus", class: "" },
-      { path: "/RatingStatistique", title: "Rating Statistique", icon: "pe-7s-graph1", class: "" }
+      {
+        path: "/createEvent",
+        title: "Create Event",
+        icon: "pe-7s-plus",
+        class: "",
+      },
+      {
+        path: "/category",
+        title: "Category List",
+        icon: "pe-7s-menu",
+        class: "",
+      },
+      {
+        path: "/createCategory",
+        title: "Create Category",
+        icon: "pe-7s-plus",
+        class: "",
+      },
+      {
+        path: "/RatingStatistique",
+        title: "Rating Statistique",
+        icon: "pe-7s-graph1",
+        class: "",
+      },
     ],
   },
   {
@@ -59,12 +84,14 @@ export const ROUTES: RouteInfo[] = [
     title: "Forum Management",
     icon: "pe-7s-news-paper",
     class: "",
+    openSubMenu: false,
   },
   {
     path: "/competition",
     title: "Competition Management",
     icon: "pe-7s-science",
     class: "",
+    openSubMenu: false,
   },
   // { path: '/maps', title: 'Maps (tools)',  icon:'pe-7s-map-marker', class: '' },
   // { path: '/notifications', title: 'Notifications (tools)',  icon:'pe-7s-bell', class: '' }
@@ -77,19 +104,32 @@ export const ROUTES: RouteInfo[] = [
 export class SidebarComponent implements OnInit {
   menuItems: any[];
   showSubMenu: boolean;
-
-  constructor() {}
+  connectedUser: any;
+  constructor(private globalService: GlobalService, private router: Router) {}
 
   ngOnInit() {
     this.menuItems = ROUTES.filter((menuItem) => menuItem);
     console.log("menuItems", this.menuItems);
   }
+
+  getConnectedUser() {
+    this.globalService.getConnectedUser().subscribe((connectedUser) => {
+      console.log(connectedUser);
+      this.connectedUser = connectedUser;
+    });
+  }
+
   isMobileMenu() {
     if ($(window).width() > 991) {
       return false;
     }
     return true;
   }
+
+  navigateToPath(path) {
+    if (path) this.router.navigate([path]);
+  }
+
   openSubMenu() {
     this.showSubMenu = true;
   }

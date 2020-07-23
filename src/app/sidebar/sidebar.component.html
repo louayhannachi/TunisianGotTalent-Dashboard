@@ -6,12 +6,12 @@
         </a>
     </div>
     <ul class="nav responsive-nav">
-        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}" (click)="openSubMenu()">
-            <a  [routerLink]="[menuItem.path]">
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}" (click)="menuItem.openSubMenu = !menuItem.openSubMenu">
+            <a (click)="navigateToPath(menuItem.path)">
                 <i class="{{menuItem.icon}}"></i>
                 <p>{{menuItem.title}}</p>
             </a>
-            <div *ngIf="showSubMenu">
+            <div *ngIf="menuItem.openSubMenu">
                 <ul routerLinkActive="active" *ngFor="let child of menuItem.child" class="{{child.class}}">
                     <a  [routerLink]="[child.path]">
                         <i class="{{child.icon}}"></i>
