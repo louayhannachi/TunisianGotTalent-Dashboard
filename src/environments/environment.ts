@@ -26,7 +26,8 @@ export const wsUrl = {
     },
     'category':{
       'getAll' : '/tgt/categoryevent/',
-      'delete': '/tgt/categoryevent/delete/{0}'
+      'delete': '/tgt/categoryevent/delete/{0}',
+      'create': '/tgt/categoryevent/create'
     },
   },
   'business': {

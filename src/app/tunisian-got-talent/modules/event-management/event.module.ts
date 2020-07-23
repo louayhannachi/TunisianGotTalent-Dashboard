@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { CommonModule } from '@angular/common';
@@ -15,7 +16,7 @@ import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
     imports: [CommonModule,MatCardModule,MatDatepickerModule,MatFormFieldModule, MatNativeDateModule, MatInputModule,
-        MatIconModule],
+        MatIconModule,ReactiveFormsModule],
     providers: [EventService],
     declarations: [ShowEventComponent, CreateEventComponent, CreateCategoryComponent, ShowCategoryComponent, RatingStatistiqueComponent],
     exports :[]

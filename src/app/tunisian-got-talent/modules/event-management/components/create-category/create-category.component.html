@@ -7,7 +7,7 @@
             <h4 class="title">Add Category</h4>
           </div>
           <div class="content">
-            <form>
+            <form [formGroup]="form">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -16,6 +16,7 @@
                       type="text"
                       class="form-control"
                       placeholder="Category Name"
+                      formControlName="category"
                     />
                   </div>
                 </div>

@@ -5,8 +5,8 @@
             Tunisian Got Talent
         </a>
     </div>
-    <ul class="nav responsive-nav">
-        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}" (click)="menuItem.openSubMenu = !menuItem.openSubMenu">
+    <ul *ngIf="connectedUser" class="nav responsive-nav">
+        <li  routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}" (click)="menuItem.openSubMenu = !menuItem.openSubMenu">
             <a (click)="navigateToPath(menuItem.path)">
                 <i class="{{menuItem.icon}}"></i>
                 <p>{{menuItem.title}}</p>

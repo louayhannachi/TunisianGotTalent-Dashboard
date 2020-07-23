@@ -97,7 +97,7 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
     this.menuItems = ROUTES.filter((menuItem) => menuItem);
-    console.log("menuItems", this.menuItems);
+    this.getConnectedUser();
   }
 
   getConnectedUser() {
