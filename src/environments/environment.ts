@@ -12,20 +12,8 @@ export const wsUrl = {
     'user':'tgt/talent/user/loginAdminUser'
   },
   'talent': {
-    'profil':{
-      'getAll': '/tgt/talent/profil/getAll',
-      'getById': '/tgt/talent/profil/relatedToProfile/{0}',
-      'delete': '/tgt/talent/profil/delete/{0}',
-      'create': '/tgt/talent/profil/create',
-      'edit': '/tgt/talent/profil/edit'
-    },
-    'rating':{
-      'getAll': '/tgt/talent/rating/getAll',
-      'getById': '/tgt/talent/rating/getByProfilId/{0}',
-      'delete': '/tgt/talent/rating/delete/{0}',
-      'create': '/tgt/talent/rating/rate',
-      'edit': '/tgt/talent/rating/edit'
-    }
+    'getLikesPerProfil': '/tgt/talent/profil/countLikes',
+    'getCommentsPerProfil': '/tgt/talent/profil/countComments',
   },
   'event': {
     'events':{

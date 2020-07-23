@@ -1,10 +1,24 @@
+<!-- https://www.positronx.io/angular-chart-js-tutorial-with-ng2-charts-examples/ -->
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h2>TALENT STATISTICS</h2>
-                <div class="card">
-                    
+                <h2>like / profil name</h2>
+                <div *ngIf="likesChartReady" class="card">
+                    <div class="chart-wrapper">
+                        <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                            [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+                            [chartType]="barChartType">
+                        </canvas>
+                    </div>
+                </div>
+                <h2>comment / profil / nb comments : {{nbComment}}</h2>
+                <div *ngIf="CommentsChartReady" class="card">
+                    <div class="chart-wrapper">
+                        <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels"
+                            [chartType]="doughnutChartType">
+                        </canvas>
+                    </div>
                 </div>
             </div>
         </div>
