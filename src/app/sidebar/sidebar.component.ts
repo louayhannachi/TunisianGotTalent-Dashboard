@@ -22,21 +22,9 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "/TalentStatistics",
         title: "Talent statistic",
-        icon: "pe-7s-graph1",
+        icon: "pe-7s-graph",
         class: "",
-      },
-      {
-        path: "/talentList",
-        title: "Talent List",
-        icon: "pe-7s-menu",
-        class: "",
-      },
-      {
-        path: "/TalenBlockedList",
-        title: "Talent Blocked List",
-        icon: "pe-7s-less",
-        class: "",
-      },
+      }
     ],
   },
   {
