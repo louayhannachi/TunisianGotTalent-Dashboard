@@ -34,17 +34,6 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    let x: EventModel;
-    x = {
-      id:"22",
-      titre: "testEdit",
-      description: "testEdit",
-      nbparticipant: "5000",
-      date: "2023-12-02",
-     };
-    // this.eventService.getAll().subscribe((result) => {
-    //   console.log("result", result);
-    // });
     this.emailChartType = ChartType.Pie;
     this.emailChartData = {
       labels: ["62%", "32%", "6%"],

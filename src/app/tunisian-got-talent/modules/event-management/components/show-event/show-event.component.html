@@ -14,7 +14,7 @@
             <p>{{ e.description }}</p>
           </mat-card-content>
           <mat-card-actions>
-            <button mat-button>EDIT</button>
+            <button mat-button (click)="editEvent(e.id)">EDIT</button>
             <button mat-button (click)="deleteEvent(e.id)">DELETE</button>
           </mat-card-actions>
         </mat-card>

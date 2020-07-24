@@ -1,3 +1,4 @@
+import { Router, ActivatedRoute } from '@angular/router';
 import { CategoryModel } from "./../../models/event.model";
 import { EventService } from "./../../services/event.services";
 import { Component, OnInit } from "@angular/core";
@@ -9,8 +10,8 @@ import { Component, OnInit } from "@angular/core";
 })
 export class ShowCategoryComponent implements OnInit {
   category: CategoryModel[];
-
-  constructor(private eventService: EventService) {}
+  
+  constructor(private eventService: EventService, private router:Router) {}
 
   ngOnInit(): void {
     this.getAllCategory();
@@ -26,5 +27,9 @@ export class ShowCategoryComponent implements OnInit {
     this.eventService.deleteCategory(id).subscribe((result) => {
       this.getAllCategory();
     });
+  }
+
+  editCategory(id){
+    this.router.navigate(['/createCategory',id])
   }
 }

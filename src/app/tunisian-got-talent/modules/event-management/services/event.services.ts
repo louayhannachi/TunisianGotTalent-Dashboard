@@ -1,15 +1,18 @@
-import { EventModel } from "./../models/event.model";
+import { EventModel } from './../models/event.model';
 import { wsUrl } from "./../../../../../environments/environment";
 import { Observable } from "rxjs";
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { StringFormat } from "app/tunisian-got-talent/utils/SharedResources";
+import { CategoryModel } from "../models/event.model";
 
 @Injectable({
   providedIn: "root",
 })
 export class EventService {
   constructor(private httpClient: HttpClient) {}
+
+  /* Event Services*/
 
   getAll(): Observable<any> {
     return this.httpClient.get<any>(wsUrl.event.events.getAll, {
@@ -37,16 +40,41 @@ export class EventService {
     });
   }
 
-  participer(id): Observable<any> {
-    const url = StringFormat(wsUrl.event.events.participer, id);
-    return this.httpClient.get<any>(url, {
+  
+  createEvent(event: EventModel): Observable<any> {
+    return this.httpClient.post<any>(wsUrl.event.events.create, event, {
       headers: {
         "Access-Control-Allow-Origin": "*",
       },
     });
   }
 
-  getAllCategory():Observable<any>  {
+  editEvent(event: EventModel): Observable<any> {
+    return this.httpClient.post<any>(wsUrl.event.events.edit, event, {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
+  }
+  /* Category Services*/
+
+  createCategory(category: CategoryModel): Observable<any> {
+    return this.httpClient.post<any>(wsUrl.event.category.create, category, {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
+  }
+
+  editCategory(category: CategoryModel): Observable<any> {
+    return this.httpClient.post<any>(wsUrl.event.category.edit, category, {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
+  }
+
+  getAllCategory(): Observable<any> {
     return this.httpClient.get<any>(wsUrl.event.category.getAll, {
       headers: {
         "Access-Control-Allow-Origin": "*",
@@ -54,8 +82,7 @@ export class EventService {
     });
   }
 
-
-  deleteCategory(id):Observable<any>{
+  deleteCategory(id): Observable<any> {
     const url = StringFormat(wsUrl.event.category.delete, id);
     return this.httpClient.delete<any>(url, {
       headers: {
@@ -64,16 +91,9 @@ export class EventService {
     });
   }
 
-  createEvent(event :any):Observable<any>{
-    return this.httpClient.post<any>(wsUrl.event.events.create, event,{
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-      },
-    });
-  }
-
-  createCategory(event :any):Observable<any>{
-    return this.httpClient.post<any>(wsUrl.event.category.create, event,{
+  getCategoryById(id): Observable<any> {
+    const url = StringFormat(wsUrl.event.category.getById, id);
+    return this.httpClient.get<any>(url, {
       headers: {
         "Access-Control-Allow-Origin": "*",
       },

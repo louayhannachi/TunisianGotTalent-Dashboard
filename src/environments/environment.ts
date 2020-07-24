@@ -20,14 +20,16 @@ export const wsUrl = {
     'getAll':'/tgt/event/getAll',
     'getById':'/tgt/event/getById/{0}',
     'create':'/tgt/event/create',
-    'edit':'/tgt/event/edit/{0}',
+    'edit':'/tgt/event/edit',
     'delete':'/tgt/event/delete/{0}',
     'participer':'/tgt/event/participer/{0}'
     },
     'category':{
       'getAll' : '/tgt/categoryevent/',
       'delete': '/tgt/categoryevent/delete/{0}',
-      'create': '/tgt/categoryevent/create'
+      'create': '/tgt/categoryevent/new',
+      'getById': '/tgt/categoryevent/show/{0}',
+      'edit': '/tgt/categoryevent/edit'
     },
   },
   'business': {

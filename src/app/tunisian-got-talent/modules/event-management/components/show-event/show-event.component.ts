@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { EventService } from "./../../services/event.services";
 import { EventModel, CategoryModel } from "./../../models/event.model";
 import { Component, OnInit, Input } from "@angular/core";
@@ -9,7 +10,7 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class ShowEventComponent implements OnInit {
   events: EventModel[];
-  constructor(private eventService: EventService) {}
+  constructor(private eventService: EventService, private router: Router) {}
 
   ngOnInit() {
     this.getAllEvent();
@@ -27,5 +28,9 @@ export class ShowEventComponent implements OnInit {
     this.eventService.delete(id).subscribe((result) => {
       this.getAllEvent();
     });
+  }
+
+  editEvent(id){
+    this.router.navigate(['/createEvent',id])
   }
 }

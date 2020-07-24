@@ -1,12 +1,13 @@
 export class EventModel {
-    id?:string
-    titre:string
-    description:string
-    nbparticipant:string
-    date:string
+  id?: number;
+  titre: string;
+  description: string;
+  nbparticipant: number;
+  date: string;
+  idcat: CategoryModel;
 }
 
 export class CategoryModel {
-    id?:string
-    titrecat:string
+  id?: number;
+  titrecat?: string;
 }
