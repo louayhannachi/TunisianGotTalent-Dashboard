@@ -2,8 +2,32 @@
   <div class="container-fluid evenement-card rowcol-md-12">
     <h2>Category list</h2>
     <div *ngIf="category">
-      <div *ngFor="let e of category" style="padding-bottom: 5%;"> 
-        <mat-card class="example-card">
+      <div *ngFor="let e of category" style="padding-left: 2%; width: 60%;">
+        <div class="card row">
+          <div class="col-md-8">
+            <h3>
+              Titre : <span>{{ e.titrecat }}</span>
+            </h3>
+          </div>
+          <div class="col-md-4 card-btn">
+            <button
+            type="button"
+            class="btn btn-danger btn-fill pull-right"
+            (click)="deleteCategory(e.id)"
+          >
+            DELETE
+          </button>
+          <button
+            style="margin-right: 1%;"
+            type="button"
+            class="btn btn-info btn-fill pull-right"
+            (click)="editCategory(e.id)"
+          >
+            EDIT
+          </button>
+          </div>
+        </div>
+        <!-- <mat-card class="example-card">
           <mat-card-header>
             <mat-card-title> Category Name : {{e.titrecat}}
             </mat-card-title>
@@ -12,6 +36,8 @@
             <button mat-button (click)="editCategory(e.id)">EDIT</button>
             <button mat-button (click)="deleteCategory(e.id)" >DELETE</button>
           </mat-card-actions>
-        </mat-card>
+        </mat-card> -->
+      </div>
+    </div>
   </div>
 </div>

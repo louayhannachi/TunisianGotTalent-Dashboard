@@ -1,8 +1,19 @@
-.example-card {
-  max-width: 400px;
+.card {
+  display: flex;
 }
 
-.example-header-image {
-  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
-  background-size: cover;
+h5 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-body {
+  padding-left: 2%;
+  width: 100%;
+}
+
+.card-btn {
+  text-align: end;
+  padding-right: 2%;
+  padding-top: 1%;
 }

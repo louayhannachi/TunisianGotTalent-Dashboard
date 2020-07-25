@@ -2,22 +2,39 @@
   <div class="container-fluid evenement-card rowcol-md-12">
     <h2>EventMangment</h2>
     <div *ngIf="events">
-      <div *ngFor="let e of events" style="padding-bottom: 5%;">
-        <mat-card class="example-card">
-          <mat-card-header>
-            <mat-card-title>{{ e.titre }}</mat-card-title>
-            <mat-card-subtitle>{{ e.date }}</mat-card-subtitle>
-            <mat-card-subtitle>{{ e.nbparticipant }} Places</mat-card-subtitle>
-          </mat-card-header>
+      <div *ngFor="let e of events">
+        <div class="card row col-md-12">
           <img mat-card-image src="assets/img/event.jpg" />
-          <mat-card-content>
-            <p>{{ e.description }}</p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button (click)="editEvent(e.id)">EDIT</button>
-            <button mat-button (click)="deleteEvent(e.id)">DELETE</button>
-          </mat-card-actions>
-        </mat-card>
+          <div class="card-body">
+            <h5>
+              <span style="width: 90px;">{{ e.titre }}</span>
+              <span
+                ><i style="color: #FF4A55;" class="fa fa-user"></i> {{ e.nbparticipant }} Places</span
+              >
+              <span>{{ GetFormattedDate(e.date)}}</span>
+            </h5>
+            <p class="card-text">
+              {{ e.description }}
+            </p>
+            <div class="row card-btn col-md-12">
+              <button
+                type="button"
+                class="btn btn-danger btn-fill pull-right"
+                (click)="deleteEvent(e.id)"
+              >
+                DELETE
+              </button>
+              <button
+              style="margin-right: 1%"
+                type="button"
+                class="btn btn-info btn-fill pull-right"
+                (click)="editEvent(e.id)"
+              >
+                EDIT
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
