@@ -26,4 +26,12 @@ export class talentService {
       },
     });
   }
+
+  getRateMoyPerProfil(): Observable<any> {
+    return this.httpClient.get<any>(wsUrl.talent.getrateMoyenne, {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
+  }
 }

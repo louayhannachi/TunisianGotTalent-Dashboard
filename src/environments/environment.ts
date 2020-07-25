@@ -14,6 +14,7 @@ export const wsUrl = {
   'talent': {
     'getLikesPerProfil': '/tgt/talent/profil/countLikes',
     'getCommentsPerProfil': '/tgt/talent/profil/countComments',
+    'getrateMoyenne': '/tgt/talent/profil/getMoyenneRate',
   },
   'event': {
     'events':{

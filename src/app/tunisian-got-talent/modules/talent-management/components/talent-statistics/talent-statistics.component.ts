@@ -35,11 +35,24 @@ export class TalentStatisticsComponent implements OnInit {
   doughnutChartType: ChartType = "doughnut";
   CommentsChartReady = false;
   nbComment = 0;
+
+  /* Rate Chart*/
+  radarChartOptions: RadialChartOptions = {
+    responsive: true
+  };
+  radarChartLabels: Label[] = [];
+
+  radarChartData: ChartDataSets[] = [
+    { data: [], label: "Rate Average Per Profil" },
+  ];
+  radarChartType: ChartType = "radar";
+  rateChartReady = false;
   constructor(private talentService: talentService) {}
 
   ngOnInit() {
     this.getLikesChartData();
     this.getCommentsChartData();
+    this.getRateAverageCartData();
   }
 
   getLikesChartData() {
@@ -63,6 +76,18 @@ export class TalentStatisticsComponent implements OnInit {
           this.nbComment = this.nbComment + item.nbslike;
         });
         this.CommentsChartReady = true;
+      }
+    });
+  }
+
+  getRateAverageCartData() {
+    this.talentService.getRateMoyPerProfil().subscribe((result) => {
+      if (result) {
+        result.forEach((item) => {
+          this.radarChartLabels.push(item.username);
+          this.radarChartData[0].data.push(item.nbslike);
+        });
+        this.rateChartReady = true;
       }
     });
   }

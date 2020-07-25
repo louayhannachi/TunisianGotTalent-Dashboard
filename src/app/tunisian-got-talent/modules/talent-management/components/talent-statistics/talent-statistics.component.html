@@ -27,5 +27,22 @@
                 </div>
             </div>
         </div>
+        <div *ngIf="rateChartReady" class="row" style="text-align: center">
+            <div class="col-md-12">
+                <h2>Rate Average Per Profil</h2>
+                <div class="card">
+                    <div class="chart-wrapper">
+                        <div class="chart-wrapper">
+                            <canvas baseChart
+                            [datasets]="radarChartData"
+                            [options]="radarChartOptions"
+                            [labels]="radarChartLabels"
+                            [chartType]="radarChartType">
+                          </canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
