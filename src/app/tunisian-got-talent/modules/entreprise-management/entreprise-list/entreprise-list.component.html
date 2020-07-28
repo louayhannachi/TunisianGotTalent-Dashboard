@@ -1,0 +1,41 @@
+<div class="wrapper">
+    <div class="page-header page-header-xs" data-parallax="true"
+        style="background-image: url('./assets/img/tgt_002.png');">
+        <div class="filter"></div>
+    </div>
+
+    <div class="container" style="margin: 36px auto;">
+        <form [formGroup]="form">
+            <div class="row mb-3" >
+                <div class="col-3"><input type="text" class="form-control" formControlName="searchCriteria"></div>
+                <div class="col-9"> <button class="btn btn-primary" (click)="rechercher()">Rechercher</button></div>
+            </div>
+        </form>
+
+                <div *ngFor="let item of ent" class="col-md-4">
+
+                    <div class="card" style="width: 18rem;">
+
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item text-center font-weight-bold">{{item.nom}}</li>
+                        </ul>
+                        <div class="card-body">
+                            <p class="card-text"> <span class="font-weight-bold"> Site Web :</span>
+                                {{item.site_officiel}} </p>
+                            <p class="card-text"> <span class="font-weight-bold"> Employés :</span> {{item.nbr_employe}}
+                            </p>
+                            <p class="card-text"> <span class="font-weight-bold"> Création :</span>
+                                {{item.date_creation}} </p>
+                            <p class="card-text"> <span class="font-weight-bold"> Email :</span> {{item.email}}email</p>
+                            <p class="card-text"> <span class="font-weight-bold"> Lieux :</span> {{item.lieux}} </p>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6" style="text-align: center;"><button class="btn btn-danger btn-sm" (click)="delete(item.id)">Supprimer</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+    </div>
+</div>

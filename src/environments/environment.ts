@@ -34,6 +34,10 @@ export const wsUrl = {
     },
   },
   'business': {
+    'getEntrepriseById':"/tgt/sponsoring/afficherEntrepriseByEvent/{0}",
+    'getAllEntreprise':"/tgt/sponsoring/afficherEntreprise",
+    'supprimerEntreprise':"/tgt/sponsoring/supprimerEntreprise/{0}",
+    'allSponsorise':"/tgt/sponsoring/afficherSponsorise",
     
   },
   'forum': {
