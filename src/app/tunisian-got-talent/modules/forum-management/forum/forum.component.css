@@ -1,0 +1,36 @@
+img {
+    height: 100%;
+    width: 32.5%;
+    max-width: 32.5%;
+    max-height: 211px;
+    border-bottom-left-radius: 12px;
+    border-top-left-radius: 12px;
+  }
+  
+  .card {
+    display: flex;
+  }
+  
+  h5 {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card-body {
+    padding-left: 2%;
+    width: 100%;
+  }
+  
+  .card-btn {
+    text-align: end;
+    padding-right: 2%;
+  }
+  
+  .card-text {
+    min-height: 96px;
+    overflow: scroll;
+    max-height: 96px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  

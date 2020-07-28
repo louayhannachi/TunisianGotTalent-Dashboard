@@ -17,6 +17,7 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
+import { ForumComponent } from 'app/tunisian-got-talent/modules/forum-management/forum/forum.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: '',      component: authentificationComponent },
@@ -32,7 +33,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'createCategory',          component: CreateCategoryComponent },
     { path: 'createCategory/:id',          component: CreateCategoryComponent },
     { path: 'RatingStatistique',          component: RatingStatistiqueComponent },
-    { path: 'forum',     component: TypographyComponent },
+    { path: 'forum',     component: ForumComponent },
     { path: 'competition',          component: IconsComponent },
     { path: 'authentification',      component: authentificationComponent },
     { path: 'maps',           component: MapsComponent },

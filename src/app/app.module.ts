@@ -18,6 +18,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { ForumComponent } from './tunisian-got-talent/modules/forum-management/forum/forum.component';
 
 @NgModule({
   imports: [
@@ -43,7 +44,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     AppComponent,
     AdminLayoutComponent,
     authentificationComponent,
-    NotificationDialogComponent
+    NotificationDialogComponent,
+    ForumComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
