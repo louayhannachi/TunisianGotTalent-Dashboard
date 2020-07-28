@@ -1,0 +1,175 @@
+<div class="mat-elevation-z8" *ngIf="competitions && !editSection" class="competition-list-container">
+  <table mat-table [dataSource]="dataSource" style="width: 100%;">
+
+    <ng-container matColumnDef="nom">
+      <th mat-header-cell *matHeaderCellDef style="width: 250px;"> Competition name </th>
+      <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="comp_type">
+      <th mat-header-cell *matHeaderCellDef style="width: 200px;"> Type </th>
+      <td mat-cell *matCellDef="let element"> {{element.comp_type}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="date_debut">
+      <th mat-header-cell *matHeaderCellDef style="width: 100px;" mat-sort-header> Start date </th>
+      <td mat-cell *matCellDef="let element"> {{element.date_debut}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="date_fin">
+      <th mat-header-cell *matHeaderCellDef style="width: 100px;" mat-sort-header> End date </th>
+      <td mat-cell *matCellDef="let element"> {{element.date_fin}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> Description </th>
+      <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Maximum participants">
+      <th mat-header-cell *matHeaderCellDef> Max participants </th>
+      <td mat-cell *matCellDef="let element"> {{element.nb_max_participant}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef style="width: 50px;"></th>
+      <td mat-cell *matCellDef="let element"> <i class="fa fa-edit action-icon" (click)="editCompetition(element)"></i>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef style="width: 50px;"></th>
+      <td mat-cell *matCellDef="let element"> <i class="fa fa-trash action-icon"
+          (click)="deleteCompetition(element)"></i> </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+</div>
+
+<div *ngIf="editSection" class="container" style="margin: 36px auto;">
+  <div class="row">
+    <button type="button" class="btn btn-danger btn-just-icon" (click)="editSection = false;">
+      <i class="fa fa-arrow-left"></i>
+    </button>
+  </div>
+
+  <div class="col-md-8 edit-competition-container">
+    <h3>Edit competition</h3>
+
+    <form class="edit-competition-form" [formGroup]="editCompFormG">
+
+      <div class="row">
+        <div class="col-md-6">
+          <label>Nom</label>
+          <div class="input-group" [ngClass]="{'input-group-focus':focus===true}">
+            <div class="input-group-prepend">
+            </div>
+            <input type="text" formControlName="nom" class="form-control" placeholder="Nom" (focus)="focus=true"
+              (blur)="focus=false">
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="margin: 0px;">
+        <label> Description </label>
+        <textarea formControlName="description" class="form-control" rows="4"
+        placeholder="Décrire la compétition..."></textarea>
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-6">
+          <label>Type de compétition</label>
+          <div class="input-group" [ngClass]="{'input-group-focus':focus6===true}">
+            <div class="input-group-prepend">
+            </div>
+            <select formControlName="competition_type" class="form-control" placeholder="Type de compétition"
+              (focus)="focus6=true" (blur)="focus6=false">
+              <option value="Talents divers">Talents divers</option>
+              <option value="Chant">Chant</option>
+              <option value="Spectacle de magie">Spectacle de magie</option>
+              <option value="Danse">Danse</option>
+              <option value="Performance de spectacle">Performance de spectacle</option>
+              <option value="Art">Art</option>
+              <option value="Dessin">Dessin</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label>Date de début</label>
+          <div class="input-group" [ngClass]="{'input-group-focus':focus2===true}">
+            <div class="input-group-prepend">
+            </div>
+            <input type="date" formControlName="date_deb" class="form-control" placeholder="Date de début"
+              (focus)="focus2=true" (blur)="focus2=false">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label>Date de fin</label>
+          <div class="input-group" [ngClass]="{'input-group-focus':focus3===true}">
+            <div class="input-group-prepend">
+            </div>
+            <input type="date" formControlName="date_fin" class="form-control" placeholder="Date de fin"
+              (focus)="focus3=true" (blur)="focus3=false">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label>Nombre maximum de participants</label>
+          <div class="input-group" [ngClass]="{'input-group-focus':focus4===true}">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="nc-icon nc-circle-10"></i></span>
+            </div>
+            <input type="text" formControlName="nb_max_participant" class="form-control"
+              placeholder="Nombre maximum de participants" (focus)="focus4=true" (blur)="focus4=false">
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 30px;">
+        <div class="col-md-3 mr-auto ml-auto">
+          <button type="submit" class="btn btn-danger btn-lg btn-fill" (click)="validateEditComp()"> Valider </button>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+<!-- Modal DELETE COMPETITION  -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <div class="modal-msg">
+      <div class="modal-icon"><i class="nc-icon nc-check-2"></i></div>
+      <p *ngIf="compToDelete" style="color: #d6534f;"> Are you sure you want to delete <span style="color: black;">
+          {{compToDelete.nom}} </span> ? </p>
+      <div style="display: flex; flex-direction: row; justify-content: flex-start;">
+        <button type="button" (click)="closeModal()" class="btn btn-secondary" style="margin: 0px 15px;"> Cancel
+        </button>
+        <button type="button" (click)="confirmDelete()" class="btn btn-danger btn-fill" style="margin: 0px 15px;">
+          Delete </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- Copyright 2020 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

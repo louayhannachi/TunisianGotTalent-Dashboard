@@ -1017,7 +1017,7 @@ input:focus {
 .input-group-addon:last-child,
 .input-group-btn:last-child > .dropdown-toggle,
 .input-group-btn:first-child > .btn:not(:first-child) {
-  border-left: 0 none;
+  /* border-left: 0 none; */
 }
 
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {

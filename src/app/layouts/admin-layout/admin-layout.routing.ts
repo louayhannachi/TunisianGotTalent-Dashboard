@@ -18,6 +18,10 @@ import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { EntrepriseListComponent } from 'app/tunisian-got-talent/modules/entreprise-management/entreprise-list/entreprise-list.component';
+import { ForumComponent } from 'app/tunisian-got-talent/modules/forum-management/forum/forum.component';
+import { CompetitionListComponent } from 'app/tunisian-got-talent/modules/competition-mangement/competition-list/competition-list.component';
+import { CreateCompetitionComponent } from 'app/tunisian-got-talent/modules/competition-mangement/components/create-competition/create-competition.component';
+import { CompetitionStatisticsComponent } from 'app/tunisian-got-talent/modules/competition-mangement/components/competition-statistics/competition-statistics.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: '',      component: authentificationComponent },
@@ -33,9 +37,11 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'createCategory',          component: CreateCategoryComponent },
     { path: 'createCategory/:id',          component: CreateCategoryComponent },
     { path: 'RatingStatistique',          component: RatingStatistiqueComponent },
-    { path: 'forum',     component: TypographyComponent },
     { path: 'entreprise',     component: EntrepriseListComponent },
-    { path: 'competition',          component: IconsComponent },
+    { path: 'forum',     component: ForumComponent },
+    { path: 'competitions',          component: CompetitionListComponent },
+    { path: 'competitions/create',          component: CreateCompetitionComponent },
+    { path: 'competitions/statistics',          component: CompetitionStatisticsComponent },
     { path: 'authentification',      component: authentificationComponent },
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },

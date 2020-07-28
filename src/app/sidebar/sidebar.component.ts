@@ -75,12 +75,26 @@ export const ROUTES: RouteInfo[] = [
     openSubMenu: false,
   },
   {
-    path: "/competition",
+    path: "/competitions",
     title: "Competition Management",
     icon: "pe-7s-science",
     class: "",
     openSubMenu: false,
-  }
+    child: [
+      {
+        path: "/competitions/create",
+        title: "Create Competition",
+        icon: "pe-7s-plus",
+        class: ""
+      },
+      {
+        path: "/competitions/statistics",
+        title: "Competition statistic",
+        icon: "pe-7s-graph",
+        class: ""
+      },
+    ]
+  },
   // { path: '/maps', title: 'Maps (tools)',  icon:'pe-7s-map-marker', class: '' },
   // { path: '/notifications', title: 'Notifications (tools)',  icon:'pe-7s-bell', class: '' }
 ];

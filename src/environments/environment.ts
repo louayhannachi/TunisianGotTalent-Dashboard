@@ -41,7 +41,7 @@ export const wsUrl = {
     
   },
   'forum': {
-    
+   'delete': '/tgt/article/delete/{id}'
   },
   'competition': {
     
