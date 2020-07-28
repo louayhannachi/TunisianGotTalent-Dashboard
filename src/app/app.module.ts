@@ -19,6 +19,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { ForumComponent } from './tunisian-got-talent/modules/forum-management/forum/forum.component';
 import { CommonModule } from '@angular/common';
 import { CreateCompetitionComponent } from './tunisian-got-talent/modules/competition-mangement/components/create-competition/create-competition.component';
 import { CompetitionListComponent } from './tunisian-got-talent/modules/competition-mangement/competition-list/competition-list.component';
@@ -56,6 +57,7 @@ import { ChartsModule } from 'ng2-charts';
     AdminLayoutComponent,
     authentificationComponent,
     NotificationDialogComponent,
+    ForumComponent,
     CreateCompetitionComponent,
     CompetitionListComponent,
     CompetitionStatisticsComponent
