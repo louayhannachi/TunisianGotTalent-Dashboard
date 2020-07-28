@@ -25,4 +25,12 @@ export class competitionService {
     return this.http.post('/tgt/competition/' + competition.id + '/edit', competition);
   }
 
+  getCompParticipations(): Observable<any> {
+    return this.http.get('/tgt/competition/getParticipations');
+  }
+
+  getCompRatings(): Observable<any> {
+    return this.http.get('/tgt/competition/getRatings');
+  }
+
 }
