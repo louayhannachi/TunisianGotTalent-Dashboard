@@ -1,5 +1,6 @@
 import { NotificationDialogComponent } from './shared/notification-dialog/notification-dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,11 +19,19 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { CommonModule } from '@angular/common';
+import { CreateCompetitionComponent } from './tunisian-got-talent/modules/competition-mangement/components/create-competition/create-competition.component';
+import { CompetitionListComponent } from './tunisian-got-talent/modules/competition-mangement/competition-list/competition-list.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   imports: [
     BrowserAnimationsModule,
+    BrowserModule,
+    CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     HttpClientModule,
     NavbarModule,
@@ -34,16 +43,18 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatInputModule,
     MatCardModule,
     MatButtonModule,
-    FormsModule,
-    ReactiveFormsModule,
     MatIconModule,
-    MatExpansionModule 
+    MatExpansionModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
     authentificationComponent,
-    NotificationDialogComponent
+    NotificationDialogComponent,
+    CreateCompetitionComponent,
+    CompetitionListComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
