@@ -26,6 +26,8 @@ import { CreateCompetitionComponent } from './tunisian-got-talent/modules/compet
 import { CompetitionListComponent } from './tunisian-got-talent/modules/competition-mangement/competition-list/competition-list.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
+import { CompetitionStatisticsComponent } from './tunisian-got-talent/modules/competition-mangement/components/competition-statistics/competition-statistics.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   imports: [
@@ -48,7 +50,8 @@ import { MatTableModule } from '@angular/material/table';
     MatIconModule,
     MatExpansionModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    ChartsModule
   ],
   declarations: [
     AppComponent,
@@ -58,7 +61,8 @@ import { MatTableModule } from '@angular/material/table';
     EntrepriseListComponent,
     ForumComponent,
     CreateCompetitionComponent,
-    CompetitionListComponent
+    CompetitionListComponent,
+    CompetitionStatisticsComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
